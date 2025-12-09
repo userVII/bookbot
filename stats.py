@@ -1,5 +1,14 @@
-def number_of_words(book_text):
-    word_count = 0
-    for word in book_text.split():
-        word_count += 1
-    return f"Found {word_count} total words"
+def get_num_words(text):
+    words = text.split()
+    return len(words)
+
+
+def get_chars_dict(text):
+    chars = {}
+    for c in text:
+        lowered = c.lower()
+        if lowered in chars:
+            chars[lowered] += 1
+        else:
+            chars[lowered] = 1
+    return chars
